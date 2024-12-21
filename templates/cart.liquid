@@ -1,0 +1,13 @@
+<h1>Your cart here</h1>
+
+{% if cart.empty? %}
+    <p> Your cart is empty!</p>
+{%  else %}
+    {% for item in cart.items %}
+        <div> 
+            <img width="200" height="250" src="{{ item.image | image_url: width: 200, height:200 }}" alt="{{ item.title }}"/>
+            <h2> {{ item.title }}</h2>
+            <p> {{ item.price | money }}</p>
+        </div>
+    {% endfor %}
+{% endif %}
