@@ -1,0 +1,14 @@
+<header>
+<div>
+<div> {{ shop.name }} </div>
+<div> 
+        <ul>
+        {% for link in linklists.main-menu.links -%}
+            {{ link.title | link_to: link.url }}
+          {%- endfor %}
+        </ul>
+      
+</div>
+</div>
+
+</header>
